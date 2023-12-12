@@ -20,3 +20,7 @@ yarn build.ts.watch
 ```
 yarn dev
 ```
+
+# Consulter/interagir avec les données : 
+http://localhost:8000/events
+http://localhost:8000/user/current
