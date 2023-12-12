@@ -1,39 +1,22 @@
-# Node / Knex / TypeScript API Example
+# Installer Yarn (dans un terminal/cmd Admin) :
+```
+corepack enable
+```
 
-This is an Express-based application server written in TypeScript. It uses GraphQL via Apollo to communicate with the client, and also supports classic REST endpoints.
+# Installer dépendances (avec Yarn) :
+```
+yarn
+```
 
-## Installation
+# Créer le base de données (à la mano) :
+Créer une bd "api-example" assignée à l'utilisateur (qu'il faut créer) "api-user"
 
-### Dependencies
+# Compilation : 
+```
+yarn build.ts.watch
+```
 
-Install dependencies with [Yarn](http://yarnpkg.com):
-
-    $ yarn
-
-This should install the ReasonML and BuckleScript platform to compile the code to JavaScript.
-
-### Local Database
-
-To use Postgres locally:
-
-    $ createuser -s api-user
-    $ createdb api-example -O api-user
-    $ yarn db.migrate
-
-## Running the Application
-
-To run in development, use a TypeScript watcher on a separate tab first:
-
-    $ yarn build.ts.watch
-
-Then run the server in development mode:
-
-    $ yarn dev
-
-## Architecture
-
-### Express
-
-The core of the application is an Express server with some middleware:
-
-* [body-parser](https://github.com/expressjs/body-parser)
+# Lancement (dans un autre terminal en parallèle) : 
+```
+yarn dev
+```
