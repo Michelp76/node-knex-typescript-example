@@ -72,4 +72,6 @@ export async function main () {
   return replaceApp
 }
 
+main();
+
 export default {create, main}

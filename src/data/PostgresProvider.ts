@@ -6,7 +6,14 @@ import {Database} from '../Config'
 /**
  * Initialize a new Postgres provider
  */
-export async function create () {
+export async function create() {
+  
+  // console.log(Database.username);
+  // console.log(Database.password);  
+  // console.log(Database.hostname);  
+  // console.log(Database.port);  
+  // console.log(Database.name);  
+
   const knex = Knex({
     client: 'pg',
     connection: {

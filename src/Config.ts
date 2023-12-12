@@ -1,13 +1,18 @@
-import parseDbUrl from 'parse-database-url'
 import dotenv from 'dotenv'
 
 dotenv.config()
 
 export namespace Database {
   export const schema = 'api'
-  export const url = process.env.DATABASE_URL || 'postgres://api-user@localhost:5432/api-example'
-  export const config = parseDbUrl(url)
-  export const {database, user, name, username, password, hostname, host, port} = config
+  export const database = process.env.DATABASE_NAME;
+  export const user = process.env.DATABASE_USERNAME;  
+  export const name = process.env.DATABASE_NAME; 
+  export const username = process.env.DATABASE_USERNAME;  
+  export const password = process.env.DATABASE_PASSWORD;  
+  export const hostname = process.env.DATABASE_HOSTNAME;
+  export const host = process.env.DATABASE_HOSTNAME;
+  export const port = 5432;  
+
   export const poolMin = Number(process.env.DATABASE_POOL_MIN || '0')
   export const poolMax = Number(process.env.DATABASE_POOL_MAX || '10')
   export const poolIdle = Number(process.env.DATABASE_POOL_IDLE || '10000')
@@ -41,8 +46,4 @@ export namespace Knex {
   }
 }
 
-export namespace Redis {
-  export const url = process.env.REDIS_URL
-}
-
-export default {Database, Server, Knex, Redis}
+export default {Database, Server, Knex}

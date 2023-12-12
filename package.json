@@ -16,10 +16,10 @@
     "db.migrate": "dotenv knex migrate:latest",
     "db.reset": "dropdb api-example && createdb api-example -O api-user && yarn db.migrate",
     "dev": "yarn dev.watch.debug",
-    "dev.run": "NODE_ENV=development dotenv node dist/Server.js",
-    "dev.debug": "DEBUG=allay-api:*,graphile-build:* yarn dev.run",
-    "dev.watch": "NODE_ENV=development dotenv nodemon dist/Server.js",
-    "dev.watch.debug": "DEBUG=allay-api:*,graphile-build:* yarn dev.watch",
+    "dev.run": "SET NODE_ENV=development & dotenv node dist/src/Server.js",
+    "dev.debug": "SET DEBUG=allay-api:*,graphile-build:* & yarn dev.run",
+    "dev.watch": "SET NODE_ENV=development & dotenv nodemon dist/src/Server.js",
+    "dev.watch.debug": "SET DEBUG=allay-api:*,graphile-build:* & yarn dev.watch",
     "lint": "tslint --format stylish --project tsconfig.json",
     "precommit": "lint-staged",
     "prepush": "yarn check.types",
@@ -45,7 +45,7 @@
     "moment": "^2.23.0",
     "morgan": "^1.9.1",
     "parse-database-url": "^0.3.0",
-    "pg": "^7.8.0",
+    "pg": "^8.11.3",
     "ramda": "^0.26.1"
   },
   "devDependencies": {
